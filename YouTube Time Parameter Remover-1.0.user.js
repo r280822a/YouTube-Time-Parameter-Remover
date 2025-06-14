@@ -28,4 +28,14 @@
 
     // Run on page load
     window.addEventListener('load', cleanURL);
+
+    // Detect URL changes
+    let lastUrl = location.href;
+    new MutationObserver(() => {
+        const currentUrl = location.href;
+        if (currentUrl !== lastUrl) {
+            lastUrl = currentUrl;
+            cleanURL();
+        }
+    }).observe(document, { subtree: true, childList: true });
 })();
