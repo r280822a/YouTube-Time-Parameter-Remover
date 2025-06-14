@@ -1,15 +1,31 @@
 // ==UserScript==
-// @name         New Userscript
+// @name         YouTube Time Parameter Remover
 // @namespace    http://tampermonkey.net/
 // @version      1.0
-// @description  try to take over the world!
-// @author       You
-// @match        http://*/*
+// @description  Remove the &t=*s parameter from YouTube URLs
+// @author       Rehan Ahmad
+// @match        https://www.youtube.com/*
 // @grant        none
 // ==/UserScript==
 
-(function() {
+(function () {
     'use strict';
 
-    // Your code here...
+    function cleanURL() {
+        const url = new URL(window.location.href);
+        const params = url.searchParams;
+
+        // If 't' parameter exists, remove it
+        if (params.has('t')) {
+            params.delete('t');
+            const cleanUrl = url.origin + url.pathname + '?' + params.toString();
+
+            // Replace the URL without reloading the page
+            window.history.replaceState({}, '', cleanUrl);
+            console.log('Replaced timestamp parameter in URL');
+        }
+    }
+
+    // Run on page load
+    window.addEventListener('load', cleanURL);
 })();
