@@ -1,6 +1,9 @@
 # YouTube Time Parameter Remover Userscript
 
-User script that removes the '&t=*s' parameter from YouTube URLs, letting you refresh the page without being put back to a previous timstamp. 
+<p align='center'>
+<img src='https://raw.githubusercontent.com/r280822a/YouTube-Time-Parameter-Remover/refs/heads/main/icon/icon.png' width='200'>
+</p>
+User script that removes the annoying '&t=*s' parameter from YouTube URLs, letting you refresh the page without being put back to a previous timstamp. 
 
 ## How to Use
 
