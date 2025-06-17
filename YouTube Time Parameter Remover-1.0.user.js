@@ -5,6 +5,7 @@
 // @description  Remove the &t=*s parameter from YouTube URLs
 // @author       Rehan Ahmad
 // @match        https://www.youtube.com/*
+// @icon         https://raw.githubusercontent.com/r280822a/YouTube-Time-Parameter-Remover/refs/heads/main/icon/icon.png
 // @grant        none
 // ==/UserScript==
 
